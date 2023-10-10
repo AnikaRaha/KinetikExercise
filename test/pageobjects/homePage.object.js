@@ -18,7 +18,10 @@ class HomePageObjects{
     get item2AddCart() {
         return $("(//a[@data-product-id=2])[2]");
     }
-    get homeManu() {
+    get continueShoppingButton() {
+        return $("//button[contains(.,'Continue Shopping')]");
+    }
+    get cartButton() {
         return $("(//a[@href='/view_cart'])[1]");
     }
 }
