@@ -9,5 +9,8 @@ class CartPageActions{
     async proceedToCheckout(){
         cartPageObjects.checkoutButton.click();
     }
+    async clickRegister(){
+        cartPageObjects.registerButton.click();
+    }
 }
 module.exports = new CartPageActions();
