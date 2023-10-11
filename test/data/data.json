@@ -3,5 +3,14 @@
     "item_2" : "Men Tshirt",
     "item_1_pr" : "500",
     "item_2_pr" : "400",
-    "cart_verifier" : "Shopping Cart"
+    "cart_verifier" : "Shopping Cart",
+    "password" : "Pas$w0rd",
+    "firstname" : "Anika",
+    "lastname" : "Alam",
+    "company" : "Test Company",
+    "address1" : "Mirpur 10, Dhaka",
+    "state" : "Dhaka",
+    "city" : "Dhaka",
+    "zipcode" : "1216",
+    "mobileNum" : "01918162525"
 }
