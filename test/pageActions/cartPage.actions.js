@@ -1,16 +1,17 @@
 const cartPageObjects = require("../pageobjects/cartPage.object");
 const data = require("../data/data.json");
-const cartVerifier = data.cart_verifier;
+const expect = require("chai").expect;
 
 class CartPageActions{
     async verifyCartPage(){
-        cartPageObjects.cartPageBreadcrumb.getText() == cartVerifier;
+        let cartPageBreadcrumbText = await cartPageObjects.cartPageBreadcrumb.getText();
+        expect(cartPageBreadcrumbText).to.equal(data.cart_verifier);
     }
     async proceedToCheckout(){
-        cartPageObjects.checkoutButton.click();
+        await cartPageObjects.checkoutButton.click();
     }
     async clickRegister(){
-        cartPageObjects.registerButton.click();
+        await cartPageObjects.registerButton.click();
     }
     async storeCartItem1() {
         const item1Name = await cartPageObjects.cartItem1Name.getText();

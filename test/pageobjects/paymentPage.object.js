@@ -14,13 +14,14 @@ class PaymentPageObjects{
         return $("//input[@name='expiry_month']");
     }
     get expireYearField() {
-        return $("//input[@name='expiry-year']");
+        return $("//input[@name='expiry_year']");
     }
     get confirmPaymentButton() {
         return $("//button[@id='submit']");
     }
     get paymentConfirmText() {
-        return $("//form/div/div[contains(.,'Your order has been placed successfully!')]");
+        const confirmTextElement = $("(//p[contains(.,Congratulations)])[1]");
+        return confirmTextElement;
     }
 }
 module.exports = new PaymentPageObjects();

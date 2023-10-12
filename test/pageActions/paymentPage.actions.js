@@ -1,6 +1,6 @@
-const { SUPPORTED_BROWSER_RUNNER_PRESETS } = require("@wdio/cli/build/constants");
 const data = require("../data/data.json");
 const paymentPageObjects = require("../pageobjects/paymentPage.object");
+const expect = require("chai").expect;
 
 class PaymentPageActions{
     async fillNameOnCard() {
@@ -23,8 +23,8 @@ class PaymentPageActions{
         await paymentPageObjects.confirmPaymentButton.click();
     }
     async verifyConfirmText() {
-        await browser.pause(1000);
-        await paymentPageObjects.paymentConfirmText.getValue();
+        let confirmText = await paymentPageObjects.paymentConfirmText.getText();
+        expect(confirmText).toHaveText(data.confirmText);
     }
 }
 module.exports = new PaymentPageActions();
