@@ -14,5 +14,11 @@
     "city" : "Dhaka",
     "zipcode" : "1216",
     "mobileNum" : "01918162525",
-    "regConfirmText" : "Account Created!"
+    "regConfirmText" : "Account Created!",
+    "nameOnCard" : "Card Holder",
+    "cardNumber" : "4263982640269299",
+    "cvc" : "738",
+    "expiryMonth" : "04",
+    "expiryYear" : "2026",
+    "confirmText" : "Your order has been placed successfully!"
 }

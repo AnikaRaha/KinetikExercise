@@ -4,6 +4,7 @@ const cartPageAction = require("../pageActions/cartPage.actions");
 const registerPageAction = require("../pageActions/registerPage.actions");
 const confirmRegisterAction = require("../pageActions/confirmRegister.actions");
 const checkoutAfterLoginAction = require("../pageActions/checkoutAfterLogin.actions");
+const paymentPageActions = require("../pageActions/paymentPage.actions");
 
 describe("Automation Exercise Suite", ()=>{
     it("Verify home page", async()=>{
@@ -70,5 +71,16 @@ describe("Automation Exercise Suite", ()=>{
     })
     it("Place order", async()=>{
         await checkoutAfterLoginAction.clickPlaceOrder();
+    })
+    it("Fill up card information", async()=>{
+        await paymentPageActions.fillNameOnCard();
+        await paymentPageActions.fillCardNumber();
+        await paymentPageActions.fillCVC();
+        await paymentPageActions.fillExpireMonth();
+        await paymentPageActions.fillExpireYear();
+    })
+    it("Confirm Payment", async()=>{
+        await paymentPageActions.clickConfirmPayment();
+        await paymentPageActions.verifyConfirmText(); //should be assertion
     })
 })
