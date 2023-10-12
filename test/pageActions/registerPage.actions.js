@@ -1,14 +1,15 @@
 const registerPageObjects = require("../pageobjects/registerPage.object");
 const data = require("../data/data.json");
+let datestamp = new Date().valueOf();
 
 class RegisterPageActions{
     async fillName() {
         await registerPageObjects.userName.click();
-        await registerPageObjects.userName.addValue("Anika Alam");
+        await registerPageObjects.userName.addValue(data.username);
     }
     async fillEmail() {
         await registerPageObjects.email.click();
-        await registerPageObjects.email.addValue("someemail@mail.com");
+        await registerPageObjects.email.addValue("someemail"+datestamp+"@mail.com");
     }
     async clickSignup() {
         await registerPageObjects.signUpButton.click();
@@ -69,6 +70,7 @@ class RegisterPageActions{
         registerPageObjects.mobNumber.addValue(data.mobileNum);
     }
     async clickCreateAccount() {
+        await browser.pause(2000);
         registerPageObjects.createAccButton.click();
     }
 }

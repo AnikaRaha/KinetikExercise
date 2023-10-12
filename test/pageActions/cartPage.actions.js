@@ -12,5 +12,13 @@ class CartPageActions{
     async clickRegister(){
         cartPageObjects.registerButton.click();
     }
+    async storeCartItem1() {
+        const item1Name = await cartPageObjects.cartItem1Name.getText();
+        const item1Price = await cartPageObjects.cartItem1Price.getText();
+    }
+    async storeCartItem2() {
+        const item2Name = await cartPageObjects.cartItem2Name.getText();
+        const item2Price = await cartPageObjects.cartItem2Price.getText();
+    }
 }
 module.exports = new CartPageActions();

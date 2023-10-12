@@ -1,14 +1,7 @@
-const data = require("../data/data.json");
 
-class CartPageObjects{
-    get cartPageBreadcrumb(){
-        return $("//li[contains(.,'Shopping Cart')]");
-    }
-    get checkoutButton(){
-        return $("//a[contains(.,'Proceed To Checkout')]");
-    }
-    get registerButton(){
-        return $("(//a[@href='/login'])[2]");
+class CheckoutAfterLoginObjects{
+    get deliveryAddress() {
+        return $("(//ul[@id='address_delivery']/li)[4]");
     }
     get cartItem1Name() {
         return $("//tr[@id='product-1']/td[@class='cart_description']/h4/a");
@@ -22,5 +15,8 @@ class CartPageObjects{
     get cartItem2Price() {
         return $("//tr[@id='product-2']/td[@class='cart_price']/p");
     }
+    get placeOrderButton() {
+        return $("//a[@href='/payment']");
+    }
 }
-module.exports = new CartPageObjects();
+module.exports = new CheckoutAfterLoginObjects();
